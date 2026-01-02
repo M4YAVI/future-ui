@@ -1,3 +1,5 @@
+"use client";
+
 import { isNodeSelection } from "@tiptap/react";
 import { BubbleMenu, BubbleMenuProps } from '@tiptap/react/menus'
 

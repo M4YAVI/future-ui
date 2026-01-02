@@ -1,3 +1,5 @@
+"use client";
+
 import { EditorContent, useEditor } from "@tiptap/react";
 import { defaultExtensions } from "./extensions";
 import { slashCommand } from "./slash-command";
@@ -31,6 +33,7 @@ export const TiptapEditor = ({ initialContent, onChange }: TiptapEditorProps) =>
                 },
             },
         },
+        immediatelyRender: false,
     });
 
     if (!editor) {

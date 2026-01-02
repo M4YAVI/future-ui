@@ -3,11 +3,15 @@
 import { useState } from "react";
 import { Highlight, themes, type Language } from "prism-react-renderer";
 
+import { cn } from "@/lib/utils";
+
 interface CodeBlockProps {
     code: string;
     language?: string;
     showLineNumbers?: boolean;
     filename?: string;
+    className?: string;
+    codeClassName?: string;
 }
 
 export function CodeBlock({
@@ -15,6 +19,8 @@ export function CodeBlock({
     language = "tsx",
     showLineNumbers = false,
     filename,
+    className,
+    codeClassName,
 }: CodeBlockProps) {
     const [isCopied, setIsCopied] = useState(false);
 
@@ -25,7 +31,7 @@ export function CodeBlock({
     };
 
     return (
-        <div className="group relative overflow-hidden rounded-lg border border-zinc-800 bg-[#09090b]">
+        <div className={cn("group relative overflow-hidden rounded-lg border border-zinc-800 bg-[#09090b]", className)}>
             {filename && (
                 <div className="flex items-center justify-between border-b border-zinc-800 bg-zinc-900/50 px-4 py-2 text-xs font-mono text-zinc-400">
                     <span>{filename}</span>
@@ -77,7 +83,10 @@ export function CodeBlock({
                 >
                     {({ className, style, tokens, getLineProps, getTokenProps }) => (
                         <div
-                            className="max-h-[650px] overflow-auto p-4 text-sm scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-700/50"
+                            className={cn(
+                                "max-h-[650px] overflow-auto p-4 text-sm scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-700/50",
+                                codeClassName
+                            )}
                             style={{
                                 ...style,
                                 backgroundColor: "transparent", // Force transparent to use container bg
