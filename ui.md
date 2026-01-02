@@ -89,6 +89,11 @@ future-ui/
 | **Testimonial Card** | `components/ui/testimonial-card.tsx` | Spotlight effect, text highlights, avatar |
 | **Spotlight Card** | `components/ui/spotlight-card.tsx` | Mouse-tracking spotlight gradient |
 
+### Hover Effects
+| Variant | Path | Description |
+|---------|------|-------------|
+| **Floating Highlight** | `components/ui/floating-highlight.tsx` | Fluid background element that follows cursor |
+
 ### Showcase Components
 | Component | Path | Description |
 |-----------|------|-------------|

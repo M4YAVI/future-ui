@@ -34,6 +34,13 @@ const navigation: NavSection = {
         { name: "Badge", href: "/docs/components/badge" },
         { name: "Alert", href: "/docs/components/alert" },
         { name: "Tabs", href: "/docs/components/tabs" },
+        {
+            name: "Hover",
+            href: "/docs/components/hover",
+            children: [
+                { name: "Floating Highlight", href: "/docs/components/hover/floating" },
+            ],
+        },
     ],
 };
 
