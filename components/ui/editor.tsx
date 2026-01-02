@@ -46,6 +46,9 @@ export function Editor({
             TaskList,
             TaskItem.configure({
                 nested: true,
+                HTMLAttributes: {
+                    class: "flex flex-row items-start gap-2",
+                },
             }),
             Image.configure({
                 inline: false,

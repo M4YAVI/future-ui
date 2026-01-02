@@ -112,7 +112,7 @@ export const defaultExtensions = [
     TaskItem.configure({
         nested: true,
         HTMLAttributes: {
-            class: "flex gap-2",
+            class: "flex flex-row items-start gap-2",
         },
     }),
     Markdown.configure({

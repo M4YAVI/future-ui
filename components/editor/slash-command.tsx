@@ -375,8 +375,6 @@ const getSuggestionItems = ({ query }: { query: string }) => {
                 input.onchange = async () => {
                     if (input.files?.length) {
                         const file = input.files[0];
-                        const pos = editor.view.state.selection.from;
-                        // set url to blob
                         const src = URL.createObjectURL(file);
                         editor.chain().focus().setImage({ src }).run();
                     }

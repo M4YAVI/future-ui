@@ -117,10 +117,19 @@ const getSuggestionItems = ({ query }: { query: string }): CommandItem[] => {
             description: "Insert an image from URL.",
             icon: <ImageIcon className="w-4 h-4" />,
             command: ({ editor, range }) => {
-                const url = window.prompt("Enter image URL:");
-                if (url) {
-                    editor.chain().focus().deleteRange(range).setImage({ src: url }).run();
-                }
+                editor.chain().focus().deleteRange(range).run();
+                // Upload logic
+                const input = document.createElement("input");
+                input.type = "file";
+                input.accept = "image/*";
+                input.onchange = async () => {
+                    if (input.files?.length) {
+                        const file = input.files[0];
+                        const src = URL.createObjectURL(file);
+                        editor.chain().focus().setImage({ src }).run();
+                    }
+                };
+                input.click();
             },
         },
     ];
@@ -196,8 +205,8 @@ const CommandMenu = forwardRef<any, CommandMenuProps>((props, ref) => {
                     key={item.title}
                     onClick={() => selectItem(index)}
                     className={`flex w-full items-center gap-3 rounded-md px-3 py-2 text-left text-sm transition-colors ${index === selectedIndex
-                            ? "bg-zinc-800 text-white"
-                            : "text-zinc-400 hover:bg-zinc-800/50 hover:text-white"
+                        ? "bg-zinc-800 text-white"
+                        : "text-zinc-400 hover:bg-zinc-800/50 hover:text-white"
                         }`}
                 >
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-zinc-700 bg-zinc-900">
