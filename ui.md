@@ -93,6 +93,8 @@ future-ui/
 | Variant | Path | Description |
 |---------|------|-------------|
 | **Floating Highlight** | `components/ui/floating-highlight.tsx` | Fluid background element that follows cursor |
+| **Editor** | `components/ui/editor.tsx` | Notion-style editor with Tiptap 3 |
+
 
 ### Showcase Components
 | Component | Path | Description |

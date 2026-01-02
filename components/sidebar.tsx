@@ -41,6 +41,7 @@ const navigation: NavSection = {
                 { name: "Floating Highlight", href: "/docs/components/hover/floating" },
             ],
         },
+        { name: "Editor", href: "/docs/components/editor" },
     ],
 };
 
